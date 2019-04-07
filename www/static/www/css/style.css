@@ -19819,7 +19819,7 @@ code {
 
 /* gradient buttons */
 .btn-gradient-primary {
-  background: linear-gradient(to right, #da8cff, #9a55ff);
+  background: linear-gradient(to right, #bf6166, #76161b);
   border: 0;
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
@@ -19830,7 +19830,7 @@ code {
 
 .btn-gradient-primary:not([disabled]):not(.disabled):active, .btn-gradient-primary:not([disabled]):not(.disabled).active,
 .show > .btn-gradient-primary.dropdown-toggle {
-  background: linear-gradient(to right, #da8cff, #9a55ff);
+  background: linear-gradient(to right, #bf6166, #76161b);
 }
 
 .btn-gradient-primary:hover {
@@ -20210,7 +20210,7 @@ code {
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  border: solid #b66dff;
+  border: solid #bf6166;
   border-width: 2px;
   -webkit-transition: all;
   -moz-transition: all;
@@ -20245,7 +20245,7 @@ code {
 }
 
 .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
-  background: linear-gradient(to right, #da8cff, #9a55ff);
+  background: linear-gradient(to right, #bf6166, #76161b);
   border-width: 0;
 }
 
