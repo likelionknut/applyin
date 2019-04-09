@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f167d007-5000-4e5f-8f65-231cc8dffb7e" name="loopback.kr" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\Apache24\htdocs\knut-sugang" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
