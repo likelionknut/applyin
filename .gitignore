@@ -1,6 +1,10 @@
 venv/
-.idea/*
+.idea/
 db.sqlite3
 __pycache__
 *.pyc
-knut_sugang/settings.py
+applyin/settings.py
+applyin/wsgi.py
+media/
+pub_static/
+migrations/
