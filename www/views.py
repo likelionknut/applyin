@@ -17,7 +17,7 @@ def register(request):
     if request.method == 'POST':
         if request.POST['pass'] == request.POST['confirmPass']:
             user = User.objects.create_user(
-                username=request.POST['email'], password=request.POST['pass'],
+                username=request.POST['email'], password=request.POST['pass'], email=request.POST['name']
             )
             auth.login(request, user)
             return redirect('index')

@@ -64,7 +64,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     {% if user.is_active %}
-                        <a class="dropdown-item">{{ user.username }}님 환영합니다.</a>
+                        <a class="dropdown-item">{{ user.email }}님 환영합니다.</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">내 정보 보기</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">로그아웃 하기</a>
