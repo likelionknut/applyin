@@ -1,0 +1,39 @@
+{% extends 'www/base.html' %}
+
+{% block title %}
+    로그인하기
+{% endblock %}
+
+{% block content %}
+    <body class="bg-dark">
+
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input name="email" type="email" id="inputEmail" class="form-control"
+                                   placeholder="Email address" required="required" autofocus="autofocus">
+                            <label for="inputEmail">이메일 주소</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input name="pass" type="password" id="inputPassword" class="form-control"
+                                   placeholder="Password" required="required">
+                            <label for="inputPassword">비밀번호</label>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="로그인">
+                </form>
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="{% url 'register' %}">회원가입 하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
