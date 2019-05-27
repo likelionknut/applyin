@@ -5,7 +5,7 @@ from www.views import *
 
 urlpatterns = [
     path('', Welcome.as_view(), name='index'),
-    # path('login/', views.login, name='login'),
+    path('apply/<int:apply_dest>/', Apply.as_view(), name='apply'),
 ]
 
 if settings.DEBUG:
