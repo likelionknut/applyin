@@ -1,7 +1,9 @@
 from django.urls import path
-from www import views
+from django.conf import settings
+from django.conf.urls.static import static
+from www.views import *
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('login/', views.login, name='login'),
+    path('', Welcome.as_view(), name='index'),
+    # path('login/', views.login, name='login'),
 ]
