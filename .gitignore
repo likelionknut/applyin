@@ -3,8 +3,6 @@ venv/
 db.sqlite3
 __pycache__
 *.pyc
-applyin/settings.py
-applyin/wsgi.py
 media/
 pub_static/
 migrations/
