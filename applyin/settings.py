@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'www.apps.WwwConfig',
+    'imagekit',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -112,3 +114,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'pub_static')
 
 MEDIA_URL = '/contents/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'width': '100%',
+        'lang': 'ko-KR',
+        'height': '480',
+    },
+    'attachment_filesize_limit': 10000000,
+}

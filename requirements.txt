@@ -1,4 +1,9 @@
 Django==2.1.8
+django-appconf==1.0.3
+django-imagekit==4.0.2
+django-summernote==0.8.11.4
+pilkit==2.0
 Pillow==5.4.1
 pytz==2018.9
+six==1.12.0
 sqlparse==0.3.0
