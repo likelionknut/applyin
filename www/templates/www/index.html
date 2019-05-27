@@ -1,4 +1,5 @@
 {% extends 'www/base_nav.html' %}
+{% load static %}
 {% block title %}
     ApplyIN :: 감시형 취업정보시스템
 {% endblock title %}
@@ -19,24 +20,34 @@
 
                         <div class="row">
                             {% for job in job_list %}
-                                <div class="col-4">
-                                    <div class="card card-custom bg-white border-white">
-                                        <div class="card-custom-img">
-                                            <img class="img-fluid" src="{% if job.background %}{{ job.background.url }}{% else %}http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg{% endif %}" alt="Avatar"/>
+                                    <div class="blog-card">
+                                        <div class="meta">
+                                            <div class="photo"
+                                                 style="background-image: url({% if job.background %}{{ job.background.url }}{% else %}{% static 'www/img/background.jpg' %}{% endif %})"></div>
+                                            <ul class="details">
+                                                <li class="author"><a href="#">John Doe</a></li>
+                                                <li class="date">Aug. 24, 2015</li>
+                                                <li class="tags">
+                                                    <ul>
+                                                        <li><a href="#">Learn</a></li>
+                                                        <li><a href="#">Code</a></li>
+                                                        <li><a href="#">HTML</a></li>
+                                                        <li><a href="#">CSS</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="card-custom-avatar">
-                                            <img class="img-fluid" src="{% if job.logo %}{{ job.logo.url }}{% else %}http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg{% endif %}" alt="Avatar"/>
-                                        </div>
-                                        <div class="card-body" style="overflow-y: auto">
-                                            <h4 class="card-title">{{ job.company }}</h4>
-                                            <p class="card-text">{{ job.summary }}</p>
-                                        </div>
-                                        <div class="card-footer" style="background: inherit; border-color: inherit;">
-                                            <a href="{% url 'apply' job.id %}" class="btn btn-primary">바로 지원하기</a>
-                                            <a href="{{ job.id }}-{{ job.company }}" class="btn btn-outline-primary">자세한 채용 정보</a>
+                                        <div class="description">
+                                            <h1>{{ job.company }}</h1>
+                                            <h2>{{ job.summary }}</h2>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam
+                                                facilis
+                                                numquam. Veritatis, sit.</p>
+                                            <p class="read-more">
+                                                <a href="{% url 'apply' job.id %}">지원하기</a>
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
                             {% endfor %}
 
                         </div>
