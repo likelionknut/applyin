@@ -6,58 +6,37 @@
 
 {% block content %}
     <div id="content-wrapper">
-
         <div class="container-fluid">
-
-            <!-- DataTables Example -->
-            <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-table"></i>
-                    채용 정보
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-
-                        <div class="row">
-                            {% for job in job_list %}
-                                    <div class="blog-card">
-                                        <div class="meta">
-                                            <div class="photo"
-                                                 style="background-image: url({% if job.background %}{{ job.background.url }}{% else %}{% static 'www/img/background.jpg' %}{% endif %})"></div>
-                                            <ul class="details">
-                                                <li class="author"><a href="#">John Doe</a></li>
-                                                <li class="date">Aug. 24, 2015</li>
-                                                <li class="tags">
-                                                    <ul>
-                                                        <li><a href="#">Learn</a></li>
-                                                        <li><a href="#">Code</a></li>
-                                                        <li><a href="#">HTML</a></li>
-                                                        <li><a href="#">CSS</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="description">
-                                            <h1>{{ job.company }}</h1>
-                                            <h2>{{ job.summary }}</h2>
-                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam
-                                                facilis
-                                                numquam. Veritatis, sit.</p>
-                                            <p class="read-more">
-                                                <a href="{% url 'apply' job.id %}">지원하기</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                            {% endfor %}
-
+            <div class="row">
+                {% for job in job_list %}
+                    <div class="blog-card">
+                        <div class="meta">
+                            <div class="photo"
+                                 style="background-image: url({% if job.background %}{{ job.background.url }}{% else %}{% static 'www/img/background.jpg' %}{% endif %})"></div>
+                            <ul class="details">
+                                <li class="author"><a href="#">John Doe</a></li>
+                                <li class="date">Aug. 24, 2015</li>
+                                <li class="tags">
+                                    <ul>
+                                        <li><a href="#">Learn</a></li>
+                                        <li><a href="#">Code</a></li>
+                                        <li><a href="#">HTML</a></li>
+                                        <li><a href="#">CSS</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-
+                        <div class="description">
+                            <h1>{{ job.company }}</h1>
+                            <h2>{{ job.summary }}</h2>
+                            <p>{{ job.summary }}</p>
+                            <p class="read-more">
+                                <a href="{% url 'apply' job.id %}">지원하기</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                {% endfor %}
             </div>
-
         </div>
-
     </div>
 {% endblock content %}
