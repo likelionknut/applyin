@@ -220,8 +220,8 @@
                                             <p class="card-text">{{ job.summary }}</p>
                                         </div>
                                         <div class="card-footer" style="background: inherit; border-color: inherit;">
-                                            <a href="#" class="btn btn-primary">바로 지원하기</a>
-                                            <a href="#" class="btn btn-outline-primary">자세한 채용 정보</a>
+                                            <a href="{% url 'apply' job.id %}" class="btn btn-primary">바로 지원하기</a>
+                                            <a href="{{ job.id }}-{{ job.company }}" class="btn btn-outline-primary">자세한 채용 정보</a>
                                         </div>
                                     </div>
                                 </div>
@@ -235,16 +235,6 @@
             </div>
 
         </div>
-
-        {% block footer %}
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; 2019 ApplyIN, All rights reserved.</span>
-                    </div>
-                </div>
-            </footer>
-        {% endblock footer %}
 
     </div>
 {% endblock content %}
