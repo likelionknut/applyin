@@ -25,33 +25,33 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                     <div class="card-body">
-                        <form method="POST" action="{% url 'register' %}">
+                        <form method="POST">
                             {% csrf_token %}
 
                             <div class="form-group">
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="form-label-group">
-                                            <input name="name" type="text" id="firstName" class="form-control"
+                                            <input name="username" type="text" id="username" class="form-control"
                                                    placeholder="First name"
                                                    required="required" autofocus="autofocus">
-                                            <label for="firstName">이름</label>
+                                            <label for="username">이름</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
-                                    <input name="email" type="email" id="inputEmail" class="form-control"
+                                    <input name="email" type="email" id="email" class="form-control"
                                            placeholder="Email address" required="required">
-                                    <label for="inputEmail">이메일 주소(로그인시 사용됩니다.)</label>
+                                    <label for="email">이메일 주소(로그인시 사용됩니다.)</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
-                                    <input name="address" type="text" id="inputAddress" class="form-control"
+                                    <input name="address" type="text" id="address" class="form-control"
                                            placeholder="Home address" required="required">
-                                    <label for="inputAddress">주소</label>
+                                    <label for="address">주소</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -61,7 +61,6 @@
                                         <option value="software">소프트웨어</option>
                                         <option value="imbedded">임베디드</option>
                                         <option value="network">네트워크</option>
-                                        <option value="gorani">충주고라니</option>
                                     </select>
                                 </div>
                             </div>
@@ -69,17 +68,17 @@
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="form-label-group">
-                                            <input name="pass" type="password" id="inputPassword" class="form-control"
+                                            <input name="password" type="password" id="password" class="form-control"
                                                    placeholder="Password" required="required">
-                                            <label for="inputPassword">비밀번호</label>
+                                            <label for="password">비밀번호</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-label-group">
-                                            <input name="confirmPass" type="password" id="confirmPassword"
+                                            <input name="password_verify" type="password" id="password_verify"
                                                    class="form-control"
                                                    placeholder="Confirm password" required="required">
-                                            <label for="confirmPassword">비밀번호 확인</label>
+                                            <label for="password_verify">비밀번호 확인</label>
                                         </div>
                                     </div>
                                 </div>
@@ -95,33 +94,33 @@
 
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="card-body">
-                        <form method="POST" action="{% url 'register' %}">
+                        <form method="POST">
                             {% csrf_token %}
 
                             <div class="form-group">
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="form-label-group">
-                                            <input name="name" type="text" id="firstName" class="form-control"
+                                            <input name="username" type="text" id="company_name" class="form-control"
                                                    placeholder="First name"
                                                    required="required" autofocus="autofocus">
-                                            <label for="firstName">기업명</label>
+                                            <label for="company_name">기업명</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
-                                    <input name="email" type="email" id="inputEmail" class="form-control"
+                                    <input name="email" type="email" id="companyemail" class="form-control"
                                            placeholder="Email address" required="required">
-                                    <label for="inputEmail">이메일 주소(로그인시 사용됩니다.)</label>
+                                    <label for="companyemail">이메일 주소(로그인시 사용됩니다.)</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
-                                    <input name="address" type="text" id="inputAddress" class="form-control"
+                                    <input name="address" type="text" id="company_address" class="form-control"
                                            placeholder="Home address" required="required">
-                                    <label for="inputAddress">주소</label>
+                                    <label for="company_address">주소</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -139,17 +138,17 @@
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="form-label-group">
-                                            <input name="pass" type="password" id="inputPassword" class="form-control"
+                                            <input name="password" type="password" id="company_password" class="form-control"
                                                    placeholder="Password" required="required">
-                                            <label for="inputPassword">비밀번호</label>
+                                            <label for="company_password">비밀번호</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-label-group">
-                                            <input name="confirmPass" type="password" id="confirmPassword"
+                                            <input name="password_verify" type="password" id="company_password_verify"
                                                    class="form-control"
                                                    placeholder="Confirm password" required="required">
-                                            <label for="confirmPassword">비밀번호 확인</label>
+                                            <label for="company_password_verify">비밀번호 확인</label>
                                         </div>
                                     </div>
                                 </div>
