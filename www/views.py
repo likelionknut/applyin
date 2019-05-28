@@ -23,6 +23,10 @@ class Apply(View):
         form_data = ApplicationForm(data=request.POST)
         if form_data.is_valid():
             application = form_data.save(commit=False)
+            # if application.career_verification_agreement:
+            #     application.career_verification_agreement = True
+            # else:
+            #     application.career_verification_agreement = False
             application.save()
         return redirect('index')
 
