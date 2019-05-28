@@ -6,6 +6,7 @@ from www.form import ApplicationForm
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+
 # Create your views here.
 
 class Welcome(ListView):
@@ -25,6 +26,7 @@ class Apply(View):
             application.save()
         return redirect('index')
 
+
 # def index(request):
 #     return render(request, 'www/index.html')
 
@@ -38,7 +40,8 @@ def register(request):
             return redirect('index')
         return render(request, 'www/register.html')
 
-    return render(request,'www/register.html')
+    return render(request, 'www/register.html')
+
 
 def login(request):
     if request.method == 'POST':
@@ -49,9 +52,10 @@ def login(request):
             auth.login(request, user)
             return redirect('index')
         else:
-            return render(request, 'www/login.html', {'error' : '이메일 혹은 패스워드가 맞지 않습니다.'})
+            return render(request, 'www/login.html', {'error': '이메일 혹은 패스워드가 맞지 않습니다.'})
     else:
         return render(request, 'www/login.html')
+
 
 def logout(request):
     if request.method == 'POST':

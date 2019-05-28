@@ -8,7 +8,7 @@ class ApplicationForm(forms.ModelForm):
 
     class Meta:
         model = Application
-        fields = ['name', 'email', 'phone', 'address', 'prev_company', 'prev_date_join', 'prev_date_leave', 'prev_department', 'prev_location', 'prev_position']
+        fields = ['name', 'email', 'phone', 'address', 'prev_company', 'prev_date_join', 'prev_date_leave', 'prev_department', 'prev_location', 'prev_position', 'career_verification_agreement']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "이름"}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': "이메일"}),
@@ -20,6 +20,7 @@ class ApplicationForm(forms.ModelForm):
             'prev_date_leave': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "퇴사일"}),
             'prev_position': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "직급/직책"}),
             'prev_location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "지역"}),
+            'career_verification_agreement': forms.CheckboxInput(attrs={'class': 'form-control'}),
         }
         labels = {
             'name': '',
@@ -32,4 +33,5 @@ class ApplicationForm(forms.ModelForm):
             'prev_date_leave': '',
             'prev_position': '',
             'prev_location': '',
+            'career_verification_agreement': '경력 검증 동의',
         }
