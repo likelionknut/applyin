@@ -34,17 +34,24 @@ class Apply(View):
 # def index(request):
 #     return render(request, 'www/index.html')
 
-def register(request):
-    if request.method == 'POST':
-        if request.POST['pass'] == request.POST['confirmPass']:
-            user = User.objects.create_user(
-                username=request.POST['email'], password=request.POST['pass'], email=request.POST['name']
-            )
-            auth.login(request, user)
-            return redirect('index')
+class Register(View):
+    def get(self, request):
         return render(request, 'www/register.html')
 
-    return render(request, 'www/register.html')
+    def post(self, request):
+        if request.POST['password'] == request.POST['password_verify']:
+            try:
+                if not User.objects.filter(email=request.POST['email']):
+                    user = User.objects.create_user(username=request.POST['username'], email=request.POST['email'], password=request.POST['password'])
+                    # advanced_user = AdvancedUser(user_id=user.id)
+                    # advanced_user.save()
+                    auth.login(request, user)
+                else:
+                    raise Exception
+            except Exception:
+                return render(request, 'www/register.html')
+            return redirect('index')
+        return render(request, 'www/register.html')
 
 
 def login(request):
