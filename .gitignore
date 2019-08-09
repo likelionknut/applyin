@@ -3,6 +3,5 @@ myvenv/
 .idea/
 __pycache__
 *.pyc
-media/
 pub_static/
 migrations/
