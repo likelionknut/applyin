@@ -56,8 +56,9 @@ class Register(View):
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST['email']
+        email = request.POST['email']
         password = request.POST['pass']
+        username = User.objects.get(email=email).username
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
